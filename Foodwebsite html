@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohammad Sultan - Food Design Portfolio</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    header {
+      background: #ff6f61;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: white;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #fff3f0;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #ff6f61;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #ff6f61;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+    .skills-list div {
+      background: #ffb8a3;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(255,111,97,0.5);
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+    .skills-list div:hover {
+      background-color: #ff6f61;
+      box-shadow: 0 4px 10px rgba(255,111,97,0.7);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.5rem;
+    }
+    .portfolio-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .portfolio-card img {
+      width: 100%;
+      display: block;
+      height: 180px;
+      object-fit: cover;
+    }
+    .portfolio-card .content {
+      padding: 1rem;
+    }
+    .portfolio-card .content h3 {
+      margin: 0 0 0.5rem;
+      color: #ff6f61;
+    }
+    .portfolio-card .content p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .contact-section {
+      text-align: center;
+    }
+    .contact-section p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-section a {
+      display: inline-block;
+      background: #ff6f61;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(255,111,97,0.6);
+      transition: background-color 0.3s ease;
+    }
+    .contact-section a:hover {
+      background: #ff3f2f;
+    }
+
+    footer {
+      background: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .portfolio-card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mohammad Sultan</h1>
+    <p>Freelance Food & Web Designer</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Mohammad Sultan, a passionate freelance designer who loves creating stunning food visuals and beautiful websites.
+        I combine creativity with clean, user-friendly designs to bring your food projects to life.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div>Food Styling</div>
+        <div>Graphic Design</div>
+        <div>Web Design</div>
+        <div>WordPress Development</div>
+        <div>JavaScript & CSS</div>
+        <div>Responsive Layout</div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card" tabindex="0" role="img" aria-label="Gourmet Burger">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Gourmet Burger" />
+          <div class="content">
+            <h3>Gourmet Burger</h3>
+            <p>Concept design and photography for a gourmet burger campaign.</p>
+          </div>
+        </div>
+        <div class="portfolio-card" tabindex="0" role="img" aria-label="Fresh Salad Bowl">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Fresh Salad Bowl" />
+          <div class="content">
+            <h3>Fresh Salad Bowl</h3>
+            <p>Creative styling and web layout for a fresh salad brand.</p>
+          </div>
+        </div>
+        <div class="portfolio-card" tabindex="0" role="img" aria-label="Dessert Platter">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80" alt="Dessert Platter" />
+          <div class="content">
+            <h3>Dessert Platter</h3>
+            <p>Product presentation and website integration for desserts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Interested in working together? Feel free to reach out!</p>
+      <a href="mailto:ggsultanmantap9@gmail.com?subject=Food%20Design%20Inquiry">Email Me</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Mohammad Sultan — All Rights Reserved
+  </footer>
+</body>
+</html>
